@@ -17,10 +17,10 @@ export default {
   async asyncData () {
     const { data } = await axios.get(
       // your-service-id部分は自分のサービスidに置き換えてください
-      'https://frontdevmiya.microcms.io/api/v1/blog',
+      process.env.BLOG_URL,
       {
         // your-api-key部分は自分のapi-keyに置き換えてください
-        headers: { 'X-API-KEY': 'ca4688c1-02b1-4f17-8c32-53aa1c198fe7' }
+        headers: { 'X-API-KEY': process.env.API_KEY }
       }
     )
     return data
